@@ -6,7 +6,7 @@ import com.badlogic.gdx.Gdx;
 public class ColorGame extends Game {
 	@Override
 	public void create() {
-		Gdx.app.log("ColorGame", "create called");
+		// Gdx.app.log("ColorGame", "create called");
 		showColorScreen();
 	}
 

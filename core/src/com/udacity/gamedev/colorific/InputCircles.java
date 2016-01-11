@@ -24,13 +24,13 @@ public class InputCircles {
     Vector2 newCirclePosition;
 
     public InputCircles(Viewport viewport) {
-        Gdx.app.log("InputCircles", "constructor called");
+        // Gdx.app.log("InputCircles", "constructor called");
         this.viewport = viewport;
         init();
     }
 
     public void init() {
-        Gdx.app.log("InputCircles", "Init called");
+        // Gdx.app.log("InputCircles", "Init called");
         circleList = new Array<InputCircle>(false, 3);
         colors = new Array<Color>(false, 3);
         int tempIndex = random.nextInt(3) + 1;

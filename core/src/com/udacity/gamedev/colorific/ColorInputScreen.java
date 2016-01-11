@@ -41,7 +41,7 @@ public class ColorInputScreen extends InputAdapter implements Screen {
 
     @Override
     public void show() {
-        Gdx.app.log("ColorInputScreen", "show called");
+        // Gdx.app.log("ColorInputScreen", "show called");
         renderer = new ShapeRenderer();
         renderer.setAutoShapeType(true);
 
@@ -84,7 +84,7 @@ public class ColorInputScreen extends InputAdapter implements Screen {
 
     @Override
     public void resize(int width, int height) {
-        Gdx.app.log("ColorInputScreen", "resize called");
+        // Gdx.app.log("ColorInputScreen", "resize called");
         displayViewport.update(width, height, true);
         inputCircles.update();
         // float numberCircles = inputCircles.circleList.first().position.x;
@@ -109,26 +109,27 @@ public class ColorInputScreen extends InputAdapter implements Screen {
 
     @Override
     public void dispose() {
-        Gdx.app.log("ColorInputScreen", "dispose called");
+        // Gdx.app.log("ColorInputScreen", "dispose called");
         renderer.dispose();
 
     }
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-        Gdx.app.log("ColorInputScreen", "touchDown called");
+        // Gdx.app.log("ColorInputScreen", "touchDown called");
 
         Vector2 worldTouch = displayViewport.unproject(new Vector2(screenX, screenY));
 
         for (int j = 0; j<3; j++) {
             Vector2 temp_vec = inputCircles.circleList.get(j).position;
             if (worldTouch.dst(temp_vec) < 40) {
-                Gdx.app.log("Circle", Integer.toString(j));
+                // Gdx.app.log("Circle", Integer.toString(j));
                 if (inputCircles.circleList.get(j).color.equals(Constants.DISPLAY_COLOR)) {
-                    game.showColorScreen();
+                    //game.showColorScreen();
+                    inputCircles.init();
+                    inputCircles.update();
                 }
             }
-
         }
         return true;
     }
